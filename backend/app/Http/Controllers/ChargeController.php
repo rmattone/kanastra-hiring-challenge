@@ -31,10 +31,7 @@ class ChargeController extends Controller
     {
         try {
             $file = $this->importedFileHelper->saveFile($request);
-            // $this->importedFileHelper->processFile($file->path);
-            // $this->importedFileHelper->processFile('app/unzipped/6663a0282cf51-2024-06-08-00-04-56.csv');
             dispatch(new ProcessInvoicesJob($file));
-            // $file = true;
             return $this->success($file);
         } catch (\Throwable $th) {
             return $this->error($th->getMessage());

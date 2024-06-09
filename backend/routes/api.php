@@ -18,7 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'charges'], function () {
     Route::post('/', [ChargeController::class, 'store']);
     Route::get('/', [ChargeController::class, 'list']);
-    Route::get('/{id}', [ChargeController::class, 'show']);
-    Route::delete('/{id}', [ChargeController::class, 'destroy']);
-    Route::put('/{id}', [ChargeController::class, 'update']);
 });
