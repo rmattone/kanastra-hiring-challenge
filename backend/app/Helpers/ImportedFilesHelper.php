@@ -69,9 +69,4 @@ class ImportedFilesHelper
 
         return $extractedFile;
     }
-
-    public function processFile($filePath)
-    {
-        dispatch(new ProcessInvoicesJob($filePath));
-    }
 }
