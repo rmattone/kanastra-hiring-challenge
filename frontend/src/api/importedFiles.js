@@ -1,10 +1,9 @@
-import request from '../utilities/request'
+import request from '../utilities/request.js'
 
-export function list(data) {
+export function list() {
   return request({
     url: '/charges',
-    method: 'get',
-    data
+    method: 'get'
   })
 }
 
@@ -19,19 +18,3 @@ export function store(data) {
       timeout: 600000, // Increase the timeout to 600 seconds
     });
   }
-  
-
-export function destroy(id) {
-  return request({
-    url: '/charges/' + id,
-    method: 'delete'
-  })
-}
-
-export function update(id, data) {
-  return request({
-    url: '/charges/' + id,
-    method: 'put',
-    data
-  })
-}
